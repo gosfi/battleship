@@ -1,6 +1,11 @@
 # Compiled class file
 *.class
-
+*.classpath
+*.xml
+*.eml
+*.iml
+*.project
+*.userlibraries
 # Log file
 *.log
 
