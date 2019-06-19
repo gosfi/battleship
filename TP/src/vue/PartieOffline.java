@@ -17,7 +17,9 @@ public class PartieOffline extends JFrame {
 	boolean tour = true;
 	boolean gameOver = true;
 	do {
+
 		//if()
+
 		
 		
 		
