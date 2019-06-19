@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("serial")
 public class Menu extends FrameWindow {
     public Menu(String nom, int width, int height) {
         super(nom, width, height,2,1,1);

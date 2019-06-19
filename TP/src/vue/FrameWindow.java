@@ -37,14 +37,14 @@ public class FrameWindow extends JFrame {
 		JLabel lbl = new JLabel(labelName);
 		lbl.setHorizontalAlignment(alignement);
 		lbl.setFont(new Font("Courrier New",Font.BOLD, size));
-		this.add(lbl);
+		//this.add(lbl);
 		return lbl;
 	}
 
 	public JButton addButton(String buttonName, int width, int height) {
 		JButton btn = new JButton(buttonName);
 		btn.setPreferredSize(new Dimension(width,height));
-		this.add(btn);
+		//this.add(btn);
 		return btn;
 	}
 	
@@ -57,7 +57,7 @@ public class FrameWindow extends JFrame {
 public JTextArea addArea(int height,int width){
 	    JTextArea Area = new JTextArea();
 	    Area.setPreferredSize(new Dimension(height,width));
-	    this.add(Area);
+	   // this.add(Area);
 	    return Area;
 }
 
