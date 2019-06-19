@@ -26,10 +26,7 @@ public class PlateauJeu extends FrameWindow {
 		JPanel panel2 = this.addPanel();
 		panel2.setLayout(new GridLayout(10, 10));
 		panel2.setBorder(BorderFactory.createEmptyBorder(120, 120, 120, 120));
-		
-	
-		
-		
+
 		for (int i = 0; i < 100; i++) {
 
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
@@ -38,8 +35,6 @@ public class PlateauJeu extends FrameWindow {
 			pack();
 		}
 
-		
-		
 		for (int i = 0; i < 100; i++) {
 
 			btnArrayPlayer.add(this.addButton("", 20, 20));
@@ -47,22 +42,16 @@ public class PlateauJeu extends FrameWindow {
 			panel2.add(btnArrayPlayer.get(i));
 		}
 
-		
-		
-	
-		
 		setResizable(false);
 		validate();
 	}
-
-
 
 }
 
 class EcouteurBoutons implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
-		
+
 		JButton boutons = (JButton) actionEvent.getSource();
 		Shoot shoot = new Shoot();
 
