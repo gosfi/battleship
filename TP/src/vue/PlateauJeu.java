@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @SuppressWarnings("serial")
+// une chance j'suis la pour faire toutes le fenetre -Sam 2019
 public class PlateauJeu extends FrameWindow {
 	ArrayList<JButton> btnArrayEnemy = new ArrayList<>();
 	ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
