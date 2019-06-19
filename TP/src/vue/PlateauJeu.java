@@ -38,8 +38,6 @@ public class PlateauJeu extends FrameWindow {
 		for (int i = 0; i < 100; i++) {
 
 			btnArrayPlayer.add(this.addButton("", 20, 20));
-			btnArrayPlayer.get(i).addActionListener(ecouteur);
-			panel2.add(btnArrayPlayer.get(i));
 		}
 
 		setResizable(false);
