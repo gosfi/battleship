@@ -11,7 +11,7 @@ public class Main {
         PartieOffline partieOff = new PartieOffline(ia);
         Rulez ok = new Rulez("rules", 600,600);
         ia.setPlateauJeu(jeu);
-		//YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET  
+		//YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET  
 
        
         
