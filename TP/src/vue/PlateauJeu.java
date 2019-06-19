@@ -16,11 +16,11 @@ import java.util.Collection;
 // une chance j'suis la pour faire le modele coliss de tabarnak #MuchLove
 
 public class PlateauJeu extends FrameWindow {
-	ArrayList<JButton> btnArrayEnemy = new ArrayList<>();
-	ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
 
 	public PlateauJeu(String nom, int width, int height) {
 		super(nom, width, height, 1, 2, 1);
+		ArrayList<JButton> btnArrayEnemy = new ArrayList<>();
+		ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
 		EcouteurBoutons ecouteur = new EcouteurBoutons();
 		this.setVisible(false);
 		JPanel panel = this.addPanel();
