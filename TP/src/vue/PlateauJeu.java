@@ -33,7 +33,6 @@ public class PlateauJeu extends FrameWindow {
 		for (int i = 0; i < 100; i++) {
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
 			btnArrayEnemy.get(i).addActionListener(ecouteur);
-			btnArrayEnemy.get(i).get
 			panel.add(btnArrayEnemy.get(i));
 			pack();
 		}
