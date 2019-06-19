@@ -20,7 +20,7 @@ public class PlateauJeu extends FrameWindow {
 	public PlateauJeu(String nom, int width, int height) {
 		super(nom, width, height, 1, 2, 1);
 		EcouteurBoutons ecouteur = new EcouteurBoutons();
-		this.setVisible(false);
+		this.setVisible(true);
 		JPanel panel = this.addPanel();
 		panel.setLayout(new GridLayout(10, 10));
 		panel.setBorder(BorderFactory.createEmptyBorder(25, 50, 0, 0));
@@ -47,6 +47,13 @@ public class PlateauJeu extends FrameWindow {
 		validate();
 	}
 
+	public ArrayList<JButton> getArrayEnnemy() {
+		return btnArrayEnemy;
+	}
+
+	public ArrayList<JButton> getArrayPlayer() {
+		return btnArrayPlayer;
+	}
 }
 
 class EcouteurBoutons implements ActionListener {
