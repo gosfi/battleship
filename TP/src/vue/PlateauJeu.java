@@ -46,10 +46,12 @@ public class PlateauJeu extends FrameWindow {
 		setResizable(false);
 		validate();
 	}
-	public ArrayList<JButton> getArrayEnnemy(){
+
+	public ArrayList<JButton> getArrayEnnemy() {
 		return btnArrayEnemy;
 	}
-	public ArrayList<JButton> getArrayPlayer(){
+
+	public ArrayList<JButton> getArrayPlayer() {
 		return btnArrayPlayer;
 	}
 }
