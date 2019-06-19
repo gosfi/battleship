@@ -28,7 +28,7 @@ public class PlateauJeu extends FrameWindow {
 		panel2.setBorder(BorderFactory.createEmptyBorder(120, 120, 120, 120));
 
 		for (int i = 0; i < 100; i++) {
-
+//YEET
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
 			btnArrayEnemy.get(i).addActionListener(ecouteur);
 			panel.add(btnArrayEnemy.get(i));
