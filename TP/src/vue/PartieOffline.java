@@ -9,27 +9,17 @@ import javax.swing.JFrame;
 
 import modele.*;
 
+public class PartieOffline {
 
-public class PartieOffline extends JFrame {
-	PlateauJeu partieOff = new PlateauJeu("jouseur 1",1000,800);
-	public PartieOffline() {
-	partieOff.setVisible(true);
-	boolean tour = true;
-	boolean gameOver = true;
-	do {
+	public PartieOffline(IA ia) {
 
-		//if()
+		boolean tour = false;
+		boolean gameOver = true;
+		do {
+			ia.IAAction();
 
-		
-		
-		
-	}while(gameOver);
-	
-	
-	
-	
-	
+		} while (gameOver);
+
 	}
-	
-}
 
+}

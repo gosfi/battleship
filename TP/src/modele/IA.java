@@ -5,20 +5,24 @@ import vue.PlateauJeu;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.JFrame;
-public class IA extends JFrame {
+public class IA {
 
+	// PlateauJeu plateau;
 	PlateauJeu plateau;
-	ArrayList array;
 	Shoot shoot = new Shoot();
-	
-public IA(PlateauJeu plateau) {
-	this.plateau=plateau;
-	
+	public boolean a = false;
+
+	public void IAAction() {
 		shoot.actionShoot(this.plateau.getArrayPlayer().get(new Random().nextInt(100)));
 		
+
 	}
-	
+
+	public PlateauJeu getPlateauJeu() {
+		return this.plateau;
+	}
+
+	public void setPlateauJeu(PlateauJeu plateau) {
+		this.plateau = plateau;
+	}
 }
-
-
