@@ -16,7 +16,7 @@ public class Control extends JFrame {
     public void mainMenuAction(String action) {
         switch (action) {
             case "Vs CPU":
-                this.leMenu.setDefaultCloseOperation(leMenu.HIDE_ON_CLOSE);
+                //this.leMenu.setDefaultCloseOperation(leMenu.HIDE_ON_CLOSE);
                 break;
 
         }
