@@ -23,7 +23,7 @@ public class PlateauJeu extends FrameWindow {
 		this.setVisible(false);
 		JPanel panel = this.addPanel();
 		panel.setLayout(new GridLayout(10, 10));
-		panel.setBorder(BorderFactory.createEmptyBorder(50, 100, 0, 0));
+		panel.setBorder(BorderFactory.createEmptyBorder(25, 50, 0, 0));
 		JPanel panel2 = this.addPanel();
 		panel2.setLayout(new GridLayout(10, 10));
 		panel2.setBorder(BorderFactory.createEmptyBorder(120, 120, 120, 120));
