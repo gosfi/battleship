@@ -9,40 +9,51 @@ public class Bateaux {
 	}
 
 	ArrayList<Integer> arrayNumbreOfButton;
+	int sizeBateau;
 
 	public Bateaux(TypeBateaux typeBateaux) {
 		arrayNumbreOfButton = new ArrayList<>();
 
-	}
-
-	public void addNombreDeLaCase(TypeBateaux typeBateaux, int numbreOfButton) {
-		int nbCases;
 		switch (typeBateaux) {
 
 		case PORTE_AVIONS:
-			nbCases = 4;
-			for (int i = 0; i < nbCases; i++) {
-				arrayNumbreOfButton.add(numbreOfButton + i);
-			}
+			this.sizeBateau = 4;
 			break;
+
 		case DESTROYER:
-			nbCases = 3;
-			for (int i = 0; i < nbCases; i++) {
-				arrayNumbreOfButton.add(numbreOfButton + i);
-			}
+			this.sizeBateau = 3;
 			break;
+
 		case SOUS_MARIN:
-			nbCases = 3;
-			for (int i = 0; i < nbCases; i++) {
-				arrayNumbreOfButton.add(numbreOfButton + i);
-			}
+			this.sizeBateau = 3;
 			break;
+
 		case PATROUILLE:
-			nbCases = 2;
-			for (int i = 0; i < nbCases; i++) {
-				arrayNumbreOfButton.add(numbreOfButton + i);
-			}
+			this.sizeBateau = 2;
 			break;
+		}
+
+	}
+
+	public int getSizeBateau() {
+		return this.sizeBateau;
+	}
+
+	public ArrayList<Integer> getArrayOfButtonNumber() {
+		return this.arrayNumbreOfButton;
+	}
+
+	public void initCasesOftShip(int numbreOfCase, boolean vertical) {
+		if (vertical == true) {
+			for (int i = 0; i < this.sizeBateau; i++) {
+				arrayNumbreOfButton.add(numbreOfCase + i * 10);
+			}
+		}
+
+		else {
+			for (int i = 0; i < this.sizeBateau; i++) {
+				arrayNumbreOfButton.add(numbreOfCase + i * 1);
+			}
 		}
 
 	}
