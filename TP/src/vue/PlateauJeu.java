@@ -13,8 +13,6 @@ import java.util.Collection;
 
 @SuppressWarnings("serial")
 // une chance j'suis la pour faire toutes le fenetre -Sam 2019
-// une chance j'suis la pour faire le modele coliss de tabarnak #MuchLove
-
 public class PlateauJeu extends FrameWindow {
 	ArrayList<JButton> btnArrayEnemy = new ArrayList<>();
 	ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
@@ -31,6 +29,7 @@ public class PlateauJeu extends FrameWindow {
 		panel2.setBorder(BorderFactory.createEmptyBorder(120, 120, 120, 120));
 
 		for (int i = 0; i < 100; i++) {
+			//YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET  
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
 			btnArrayEnemy.get(i).addActionListener(ecouteur);
 			panel.add(btnArrayEnemy.get(i));
@@ -42,6 +41,7 @@ public class PlateauJeu extends FrameWindow {
 			btnArrayPlayer.add(this.addButton("", 20, 20));
 			panel2.add(btnArrayPlayer.get(i));
 		}
+		
 
 		setResizable(false);
 		validate();

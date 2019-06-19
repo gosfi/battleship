@@ -36,8 +36,8 @@ public class FrameWindow extends JFrame {
 	public JLabel addLabel(String labelName, int alignement, int size) {
 		JLabel lbl = new JLabel(labelName);
 		lbl.setHorizontalAlignment(alignement);
-		lbl.setFont(new Font("Courrier New",Font.BOLD, size));
-		//this.add(lbl);
+		lbl.setFont(new Font("Arial",Font.BOLD, size));
+		this.add(lbl);
 		return lbl;
 	}
 
