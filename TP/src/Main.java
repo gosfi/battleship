@@ -1,4 +1,4 @@
-import modele.IA;
+import modele.AI;
 import vue.*;
 import controlleur.*;
 

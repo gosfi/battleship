@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import controlleur.Control;
-import modele.IA;
+import modele.AI;
 
 @SuppressWarnings("serial")
 public class Menu extends FrameWindow implements ActionListener {
