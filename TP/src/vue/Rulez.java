@@ -13,7 +13,7 @@ public class Rulez extends FrameWindow implements ActionListener {
         setVisible(true);
         JLabel rules = addLabel("Les regles",SwingConstants.CENTER,48);
         JPanel panel = addPanel();
-        JButton btn = addButton("Retour",200,100);
+        JButton btn = addButton("Retour",500,50);
         panel.add(btn);
         btn.addActionListener(this);
         add(panel);
