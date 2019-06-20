@@ -1,13 +1,13 @@
 package controlleur;
 import vue.*;
 import modele.*;
-
 import javax.swing.*;
 
 
 public class Control extends JFrame {
 
     Menu leMenu;
+    PlateauJeu lePlateauJeu;
     Player leModele;
     
 
@@ -23,5 +23,8 @@ public class Control extends JFrame {
                 break;
 
         }
+    }
+    public void getIndiceBoutons() {
+    	
     }
 }
