@@ -1,15 +1,20 @@
 package controlleur;
 import vue.*;
-
+import modele.*;
 import javax.swing.*;
 
 
 public class Control {
 
-   private  Menu leMenu;
+
+    Menu leMenu;
+    PlateauJeu lePlateauJeu;
+    Player leModele;
+    
 
 
-    public void setLeMenu(Menu unMenu) {
+
+   /* public void setLeMenu(Menu unMenu) {
         this.leMenu = unMenu;
     }
 
@@ -20,5 +25,8 @@ public class Control {
                 break;
 
         }
+    }*/
+    public void getIndiceBoutons() {
+    	
     }
 }
