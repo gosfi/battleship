@@ -1,5 +1,6 @@
 package controlleur;
 import vue.*;
+import modele.*;
 
 import javax.swing.*;
 
@@ -7,6 +8,8 @@ import javax.swing.*;
 public class Control extends JFrame {
 
     Menu leMenu;
+    Player leModele;
+    
 
 
     public void setLeMenu(Menu unMenu) {
