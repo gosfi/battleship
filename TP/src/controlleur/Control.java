@@ -26,7 +26,8 @@ public class Control {
 
         }
     }
-    public void getIndiceBoutons() {
+    public int[] getIndiceBoutons() {
     	//va recevoir l'indice de boutons
+    	return lePlateauJeu.getIndice();
     }
 }
