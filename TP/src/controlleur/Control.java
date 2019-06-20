@@ -14,7 +14,7 @@ public class Control {
 
 
 
-   /* public void setLeMenu(Menu unMenu) {
+    public void setLeMenu(Menu unMenu) {
         this.leMenu = unMenu;
     }
 
@@ -25,7 +25,7 @@ public class Control {
                 break;
 
         }
-    }*/
+    }
     public void getIndiceBoutons() {
     	
     }
