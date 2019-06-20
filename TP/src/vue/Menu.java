@@ -54,6 +54,11 @@ public class Menu extends FrameWindow implements ActionListener{
             Rulez rules = new Rulez("rules", 600,600);
 
         }
+        else {
+            this.dispose();
+            PlateauJeu plat = new PlateauJeu("Jouseur 1",1000,800);
+
+        }
 
     }
 }
