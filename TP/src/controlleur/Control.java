@@ -1,12 +1,17 @@
 package controlleur;
 import vue.*;
-
+import modele.*;
 import javax.swing.*;
 
 
-public class Control extends JFrame {
+public class Control {
+
 
     Menu leMenu;
+    PlateauJeu lePlateauJeu;
+    Player leModele;
+    
+
 
 
     public void setLeMenu(Menu unMenu) {
@@ -16,9 +21,12 @@ public class Control extends JFrame {
     public void mainMenuAction(String action) {
         switch (action) {
             case "Vs CPU":
-                //this.leMenu.setDefaultCloseOperation(leMenu.HIDE_ON_CLOSE);
+                this.leMenu.setVisible(false);
                 break;
 
         }
+    }
+    public void getIndiceBoutons() {
+    	
     }
 }

@@ -1,7 +1,7 @@
 package modele;
 
 import modele.Shoot;
-import vue.PlateauJeu;
+import vue.*;
 import java.util.ArrayList;
 import java.util.Random;
 

@@ -44,6 +44,7 @@ public class PlateauJeu extends FrameWindow {
 		
 
 		setResizable(false);
+		setVisible(true);
 		validate();
 	}
 
