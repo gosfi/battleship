@@ -27,6 +27,6 @@ public class Control {
         }
     }
     public void getIndiceBoutons() {
-    	
+    	//va recevoir l'indice de boutons
     }
 }
