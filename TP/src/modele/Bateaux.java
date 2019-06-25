@@ -44,16 +44,18 @@ public class Bateaux {
 		return this.arrayNumbreOfButton;
 	}
 
-	public void initCasesOftShip(int numbreOfCase, boolean vertical) {
+	public void initCasesOftShip(int valueOfCase, boolean vertical) {
+		arrayNumbreOfButton.clear();
+		
 		if (vertical == true) {
 			for (int i = 0; i < this.sizeBateau; i++) {
-				arrayNumbreOfButton.add(numbreOfCase + i * 10);
+				arrayNumbreOfButton.add(valueOfCase + i * 10);
 			}
 		}
 
 		else {
 			for (int i = 0; i < this.sizeBateau; i++) {
-				arrayNumbreOfButton.add(numbreOfCase + i * 1);
+				arrayNumbreOfButton.add(valueOfCase + i * 1);
 			}
 		}
 
