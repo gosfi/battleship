@@ -16,7 +16,7 @@ public class PlateauJeu extends FrameWindow {
 	Control cont;
 	ArrayList<JButton> btnArrayEnemy = new ArrayList<>();
 	ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
-	int indice;
+	int[] indice = new int[100];
 
 	public PlateauJeu(String nom, int width, int height) {
 		super(nom, width, height, 1, 3, 1);
@@ -31,9 +31,10 @@ public class PlateauJeu extends FrameWindow {
 
 		for (int i = 0; i < 100; i++) {
 
-			//YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET
+			// YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
 			btnArrayEnemy.get(i).addActionListener(ecouteur);
+			indice[i] = i;
 			panel.add(btnArrayEnemy.get(i));
 			pack();
 		}
@@ -43,7 +44,6 @@ public class PlateauJeu extends FrameWindow {
 			btnArrayPlayer.add(this.addButton("", 20, 20));
 			panel2.add(btnArrayPlayer.get(i));
 		}
-		
 
 		setResizable(false);
 		setVisible(true);
@@ -57,11 +57,13 @@ public class PlateauJeu extends FrameWindow {
 	public ArrayList<JButton> getArrayPlayer() {
 		return btnArrayPlayer;
 	}
-	public void finPartieBug(){
+
+	public void finPartieBug() {
 		this.dispose();
-		new Menu("Menu principal",600,600,cont);
+		new Menu("Menu principal", 600, 600, cont);
 	}
-	public int getIndice(){
+
+	public int[] getIndice() {
 
 		return indice;
 	}
