@@ -40,6 +40,8 @@ public class Menu extends FrameWindow implements ActionListener {
 		if (btn.getText() == "Vs CPU") {
 			this.dispose();
 			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800);
+			this.cont.setPlateau(plat);
+			plat.setCont(cont);
 
 		} else if (btn.getText() == "Rules") {
 			this.dispose();

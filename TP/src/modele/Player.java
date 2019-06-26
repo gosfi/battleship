@@ -23,6 +23,8 @@ public class Player {
 		arrayBateauPlayer.add(destroyer);
 		arrayBateauPlayer.add(sousMarin);
 		arrayBateauPlayer.add(patrouille);
+		
+		initPlacementOfShip();
 	}
 
 	public void initPlacementOfShip() {
@@ -59,8 +61,8 @@ public class Player {
 				bateauCourant.initCasesOftShip(valueCase, vertical);
 
 				// tant que c vrai je regarde lautre
-				int cpt = 0;
-				while (gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt)) == true
+				int cpt = 1;
+				while (gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt-1)) == true
 						&& cpt < bateauCourant.sizeBateau) {
 
 					cpt++;

@@ -3,6 +3,7 @@ package vue;
 import javax.swing.*;
 
 import controlleur.Control;
+import modele.Bateaux;
 import modele.Shoot;
 
 import java.awt.*;
@@ -31,7 +32,7 @@ public class PlateauJeu extends FrameWindow {
 
 		for (int i = 0; i < 100; i++) {
 
-			//YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET
+			// YAAAAAAAAAAA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET
 			btnArrayEnemy.add(this.addButton("" + (i + 1), 60, 60));
 			btnArrayEnemy.get(i).addActionListener(ecouteur);
 			panel.add(btnArrayEnemy.get(i));
@@ -43,11 +44,11 @@ public class PlateauJeu extends FrameWindow {
 			btnArrayPlayer.add(this.addButton("", 20, 20));
 			panel2.add(btnArrayPlayer.get(i));
 		}
-		
 
 		setResizable(false);
 		setVisible(true);
 		validate();
+		initPlacementShip(this.cont.passArrayToview());
 	}
 
 	public ArrayList<JButton> getArrayEnnemy() {
@@ -57,13 +58,30 @@ public class PlateauJeu extends FrameWindow {
 	public ArrayList<JButton> getArrayPlayer() {
 		return btnArrayPlayer;
 	}
-	public void finPartieBug(){
+
+	public void finPartieBug() {
 		this.dispose();
-		new Menu("Menu principal",600,600,cont);
+		new Menu("Menu principal", 600, 600, cont);
 	}
-	public int getIndice(){
+
+	public int getIndice() {
 
 		return indice;
+	}
+
+	public void initPlacementShip(ArrayList<Bateaux> arrayBateau) {
+		for (int i = 0; i < arrayBateau.size(); i++) {
+			for (int j = 0; j < arrayBateau.get(i).getArrayOfButtonNumber().size(); j++) {
+
+				int gg = arrayBateau.get(i).getArrayOfButtonNumber().get(j);
+				this.btnArrayPlayer.get(gg).setBackground(Color.red);
+			}
+
+		}
+	}
+
+	public void setCont(Control cont) {
+		this.cont = cont;
 	}
 }
 
