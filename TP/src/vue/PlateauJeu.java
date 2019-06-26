@@ -72,6 +72,8 @@ class EcouteurBoutons implements ActionListener {
 	public void actionPerformed(ActionEvent actionEvent) {
 
 		JButton boutons = (JButton) actionEvent.getSource();
+		int indice = Integer.parseInt(boutons.getText());
+
 		Shoot shoot = new Shoot();
 
 		shoot.actionShoot(boutons);
