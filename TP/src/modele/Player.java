@@ -103,7 +103,7 @@ public class Player {
 		return statutBateau;
 	}
 	
-	public ArrayList<Bateaux> getArrayBateau(){
+	public ArrayList<Bateaux> getArrayBateauPlayer(){
 		return this.arrayBateauPlayer;
 		
 	}
