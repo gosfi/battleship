@@ -34,6 +34,7 @@ public class Player {
 		int ligne;
 		int colonne;
 		int valueCase;
+		boolean goodCheckUp = false;
 		ArrayList<Boolean> gridBool = new ArrayList<>();
 
 		for (int i = 0; i < 100; i++) {
@@ -63,27 +64,43 @@ public class Player {
 				bateauCourant.initCasesOftShip(valueCase, vertical);
 
 				// tant que c vrai je regarde lautre
-				int cpt=0;
-				while(gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt))==true && cpt<bateauCourant.sizeBateau) {
-				
-					
+				int cpt = 0;
+				while (gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt)) == true
+						&& cpt < bateauCourant.sizeBateau) {
+
 					cpt++;
 				}
 
-				
-				// todo check with gridbool
+				if (cpt == bateauCourant.sizeBateau) {
+					goodCheckUp = true;
+				}
 
-	
+			} while (goodCheckUp == false);
 
-			} while (false);
-
-			for(int j=0;j<bateauCourant.getArrayOfButtonNumber().size();j++) {
+			for (int j = 0; j < bateauCourant.getArrayOfButtonNumber().size(); j++) {
 				gridBool.add(bateauCourant.getArrayOfButtonNumber().get(j), false);
 			}
-			
 
 		}
 
+	}
+
+	public StatutBateau getStatut(int valueCase) {
+		StatutBateau statutBateau=StatutBateau.RATE;
+
+		for (int i = 0; i < this.arrayBateauPlayer.size(); i++) {	
+			for (int j = 0; j < this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().size(); j++)
+
+				if (valueCase == this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().get(j)) {
+					statutBateau = StatutBateau.TOUCHE;
+					this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().remove(j);
+					if(this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().isEmpty()) {
+						statutBateau = StatutBateau.COULE;
+					}
+				} 
+		}
+
+		return statutBateau;
 	}
 
 }
