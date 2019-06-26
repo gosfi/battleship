@@ -12,6 +12,9 @@ public class Control {
     Player leModele;
     
 
+    public void bateauStatut() {
+    	leModele.getStatut(lePlateauJeu.getIndice());
+    }
 
 
     public void setLeMenu(Menu unMenu) {
@@ -26,7 +29,5 @@ public class Control {
 
         }
     }
-    public void getIndiceBoutons() {
-    	
-    }
+   
 }
