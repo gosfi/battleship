@@ -9,15 +9,10 @@ public class Player {
 	}
 
 	private ArrayList<Bateaux> arrayBateauPlayer;
-	// private ArrayList<Integer> arrayGridPlayer;
 
 	public Player() {
 		arrayBateauPlayer = new ArrayList<>();
-		/*
-		 * arrayGridPlayer = new ArrayList<>();
-		 * 
-		 * for (int i = 0; i < 100; i++) { arrayGridPlayer.add(i); }
-		 */
+		
 
 		Bateaux porteAvions = new Bateaux(Bateaux.TypeBateaux.PORTE_AVIONS);
 		Bateaux destroyer = new Bateaux(Bateaux.TypeBateaux.DESTROYER);
