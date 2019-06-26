@@ -15,19 +15,7 @@ public class Control {
     public void bateauStatut() {
     	leModele.getStatut(lePlateauJeu.getIndice());
     }
+    
 
-
-    public void setLeMenu(Menu unMenu) {
-        this.leMenu = unMenu;
-    }
-
-    public void mainMenuAction(String action) {
-        switch (action) {
-            case "Vs CPU":
-                this.leMenu.setVisible(false);
-                break;
-
-        }
-    }
    
 }
