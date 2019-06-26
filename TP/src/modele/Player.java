@@ -102,5 +102,10 @@ public class Player {
 
 		return statutBateau;
 	}
+	
+	public ArrayList<Bateaux> getArrayBateau(){
+		return this.arrayBateauPlayer;
+		
+	}
 
 }
