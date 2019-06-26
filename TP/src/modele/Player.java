@@ -9,15 +9,9 @@ public class Player {
 	}
 
 	private ArrayList<Bateaux> arrayBateauPlayer;
-	// private ArrayList<Integer> arrayGridPlayer;
 
 	public Player() {
 		arrayBateauPlayer = new ArrayList<>();
-		/*
-		 * arrayGridPlayer = new ArrayList<>();
-		 * 
-		 * for (int i = 0; i < 100; i++) { arrayGridPlayer.add(i); }
-		 */
 
 		Bateaux porteAvions = new Bateaux(Bateaux.TypeBateaux.PORTE_AVIONS);
 		Bateaux destroyer = new Bateaux(Bateaux.TypeBateaux.DESTROYER);
@@ -86,26 +80,26 @@ public class Player {
 	}
 
 	public StatutBateau getStatut(int valueCase) {
-		StatutBateau statutBateau=StatutBateau.RATE;
+		StatutBateau statutBateau = StatutBateau.RATE;
 
-		for (int i = 0; i < this.arrayBateauPlayer.size(); i++) {	
+		for (int i = 0; i < this.arrayBateauPlayer.size(); i++) {
 			for (int j = 0; j < this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().size(); j++)
 
 				if (valueCase == this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().get(j)) {
 					statutBateau = StatutBateau.TOUCHE;
 					this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().remove(j);
-					if(this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().isEmpty()) {
+					if (this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().isEmpty()) {
 						statutBateau = StatutBateau.COULE;
 					}
-				} 
+				}
 		}
 
 		return statutBateau;
 	}
-	
-	public ArrayList<Bateaux> getArrayBateau(){
+
+	public ArrayList<Bateaux> getArrayBateauPlayer() {
 		return this.arrayBateauPlayer;
-		
+
 	}
 
 }
