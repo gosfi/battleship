@@ -3,6 +3,7 @@ package vue;
 import javax.swing.*;
 
 import controlleur.Control;
+import modele.AI;
 import modele.Bateaux;
 import modele.Shoot;
 
@@ -86,6 +87,9 @@ public class PlateauJeu extends FrameWindow {
 }
 
 class EcouteurBoutons implements ActionListener {
+	Control leControleur;
+	AI leIA;
+	PlateauJeu lePlateau;
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 
@@ -95,6 +99,9 @@ class EcouteurBoutons implements ActionListener {
 		Shoot shoot = new Shoot();
 
 		shoot.actionShoot(boutons);
+		
+		
+		
 
 	}
 }
