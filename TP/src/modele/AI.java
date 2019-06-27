@@ -8,7 +8,6 @@ import modele.Player.StatutBateau;
 public class AI {
 
 	private ArrayList<Bateaux> arrayBateauAI;
-	
 
 	public AI() {
 		arrayBateauAI = new ArrayList<>();

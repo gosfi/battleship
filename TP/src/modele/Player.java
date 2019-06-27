@@ -47,7 +47,7 @@ public class Player {
 				boolean vertical = new Random().nextBoolean();
 
 				if (vertical) {
-					ligne = new Random().nextInt(12 - bateauCourant.sizeBateau) + 1;
+					ligne = new Random().nextInt(11 - bateauCourant.sizeBateau) + 1;
 					colonne = new Random().nextInt(10) + 1;
 				}
 
