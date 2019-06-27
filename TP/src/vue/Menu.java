@@ -39,10 +39,10 @@ public class Menu extends FrameWindow implements ActionListener {
 
 		if (btn.getText() == "Vs CPU") {
 			this.dispose();
-			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800);
+			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800,cont);
 
-			plat.setCont(cont);
 			plat.initPlacementShip(cont.passArrayToview());
+			cont.lancerPartieOffline();
 
 		} else if (btn.getText() == "Rules") {
 			this.dispose();
@@ -50,7 +50,7 @@ public class Menu extends FrameWindow implements ActionListener {
 
 		} else {
 			this.dispose();
-			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800);
+			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800,cont);
 
 		}
 

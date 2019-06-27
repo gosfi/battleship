@@ -20,9 +20,10 @@ public class PlateauJeu extends FrameWindow {
 	ArrayList<JButton> btnArrayPlayer = new ArrayList<>();
 	int indice;
 
-	public PlateauJeu(String nom, int width, int height) {
+	public PlateauJeu(String nom, int width, int height, Control cont) {
 		super(nom, width, height, 1, 3, 1);
-		EcouteurBoutons ecouteur = new EcouteurBoutons();
+		this.cont = cont;
+		EcouteurBoutons ecouteur = new EcouteurBoutons(this.cont);
 		this.setVisible(true);
 		JPanel panel = this.addPanel();
 		panel.setLayout(new GridLayout(10, 10));
@@ -70,6 +71,10 @@ public class PlateauJeu extends FrameWindow {
 		return indice;
 	}
 
+	public void setIndice(int indice) {
+		this.indice = indice;
+	}
+
 	public void initPlacementShip(ArrayList<Bateaux> arrayBateau) {
 		for (int i = 0; i < arrayBateau.size(); i++) {
 			for (int j = 0; j < arrayBateau.get(i).getArrayOfButtonNumber().size(); j++) {
@@ -88,20 +93,26 @@ public class PlateauJeu extends FrameWindow {
 
 class EcouteurBoutons implements ActionListener {
 	Control leControleur;
-	AI leIA;
+
 	PlateauJeu lePlateau;
+
+	public EcouteurBoutons(Control control) {
+		this.leControleur = control;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 
 		JButton boutons = (JButton) actionEvent.getSource();
 		int indice = Integer.parseInt(boutons.getText());
+		leControleur.setCase(indice);
+		leControleur.setTour(true);
+
+		this.lePlateau.btnArrayPlayer.get(lePlateau.indice).setBackground(Color.GREEN);
 
 		Shoot shoot = new Shoot();
 
 		shoot.actionShoot(boutons);
-		
-		
-		
 
 	}
 }
