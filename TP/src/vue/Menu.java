@@ -12,7 +12,7 @@ public class Menu extends FrameWindow implements ActionListener {
 
 	public Menu(String nom, int width, int height, Control unControleur) {
 		super(nom, width, height, 2, 1, 1);
-
+		this.cont = unControleur;
 		String[] noms = { "Vs CPU", "Rules", "Vs another player" };
 		addLabel("Sploosh Kaboom", SwingConstants.CENTER, 32);
 		JPanel panel = this.addPanel();
@@ -40,8 +40,9 @@ public class Menu extends FrameWindow implements ActionListener {
 		if (btn.getText() == "Vs CPU") {
 			this.dispose();
 			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800);
-			this.cont.setPlateau(plat);
+
 			plat.setCont(cont);
+			plat.initPlacementShip(cont.passArrayToview());
 
 		} else if (btn.getText() == "Rules") {
 			this.dispose();

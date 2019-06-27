@@ -48,7 +48,8 @@ public class PlateauJeu extends FrameWindow {
 		setResizable(false);
 		setVisible(true);
 		validate();
-		initPlacementShip(this.cont.passArrayToview());
+	
+		
 	}
 
 	public ArrayList<JButton> getArrayEnnemy() {
