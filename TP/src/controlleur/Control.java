@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class Control {
-
+	public boolean tour = true;
 	Menu leMenu;
 	PlateauJeu lePlateauJeu;
 	Player leModele;
@@ -30,5 +30,23 @@ public class Control {
 
 	public ArrayList<Bateaux> passArrayToview() {
 		return this.leModele.getArrayBateau();
+	}
+	public void lancerPartieOffline() {
+		boolean gameOver = true;
+		int cptP1 = 0 , cptP2 = 0;
+		
+		do {
+			
+			if(cptP1 != 12 && cptP2 != 12) {
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+		}while(gameOver = true);
 	}
 }
