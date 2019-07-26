@@ -107,7 +107,6 @@ class EcouteurBoutons implements ActionListener {
 		int indice = Integer.parseInt(boutons.getText());
 		leControleur.setCase(indice);
 		leControleur.setTour();
-
 		//this.lePlateau.btnArrayPlayer.get(lePlateau.indice).setBackground(Color.GREEN);
 
 		Shoot shoot = new Shoot();

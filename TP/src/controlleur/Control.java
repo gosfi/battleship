@@ -51,13 +51,15 @@ public class Control {
 
 	}
 
-	public void setTour() {
+	public boolean setTour() {
 		tourAI = true;
+        return tourAI;
+
 	}
 
 	public void lancerPartieOffline() {
         ai = new AI();
-        ai.initPlacementOfShip();
+       // ai.initPlacementOfShip();
 		boolean gameOver = false;
 
 		int cptPlayer = 0, cptAi = 0;
@@ -66,14 +68,14 @@ public class Control {
 
 
 
-			if (Control.tourAI == false) {
+			if (tourAI == false) {
 				StatutBateau statutAi = ai.getStatut(casePeformed);
-				Control.tourAI = true;
+				tourAI = true;
 
 				if (statutAi == StatutBateau.TOUCHE || statutAi == StatutBateau.COULE) {
 					cptPlayer++;
 				}
-			} else {
+			} else if (tourAI == true) {
 				int caseAi = new Random().nextInt(100);
 				StatutBateau statutPlayer = this.leModele.getStatut(caseAi);
 				if (statutPlayer == StatutBateau.TOUCHE || statutPlayer == StatutBateau.COULE) {
