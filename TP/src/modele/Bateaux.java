@@ -45,10 +45,14 @@ public class Bateaux {
 	}
 
 	public void initCasesOftShip(int numbreOfCase, boolean vertical) {
+		
 		if (vertical == true) {
+
 			for (int i = 0; i < this.sizeBateau; i++) {
-				arrayNumbreOfButton.add(numbreOfCase + i + 10);
+				arrayNumbreOfButton.add(numbreOfCase);
+				numbreOfCase+=10;
 			}
+			
 		}
 
 		else {

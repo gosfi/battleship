@@ -3,10 +3,11 @@ package modele;
 import java.util.ArrayList;
 import java.util.Random;
 
-import modele.Player.StatutBateau;
 
 public class AI {
-
+	public enum StatutBateauAI {
+		TOUCHE, COULE, RATE
+	}
 	private ArrayList<Bateaux> arrayBateauAI;
 
 	public AI() {
@@ -21,11 +22,15 @@ public class AI {
 		arrayBateauAI.add(destroyer);
 		arrayBateauAI.add(sousMarin);
 		arrayBateauAI.add(patrouille);
+
+		initPlacementOfShip();
+
+	
 	}
 
 	public void initPlacementOfShip() {
-		int ligne;
-		int colonne;
+		int x;
+		int y;
 		int valueCase;
 		boolean goodCheckUp = false;
 		ArrayList<Boolean> gridBool = new ArrayList<>();
@@ -42,23 +47,23 @@ public class AI {
 
 				boolean vertical = new Random().nextBoolean();
 
-				if (vertical) {
-					ligne = new Random().nextInt(12 - bateauCourant.sizeBateau) + 1;
-					colonne = new Random().nextInt(10) + 1;
+				if (vertical == true) {
+					x = new Random().nextInt(10 - bateauCourant.sizeBateau);
+					y = new Random().nextInt(10);
 				}
 
 				else {
-					ligne = new Random().nextInt(10) + 1;
-					colonne = new Random().nextInt(11 - bateauCourant.sizeBateau) + 1;
+					x = new Random().nextInt(10);
+					y = new Random().nextInt(10 - bateauCourant.sizeBateau);
 				}
 
-				valueCase = (ligne - 1) * 10 + colonne;
+				valueCase = (x * 10) + y;
 
 				bateauCourant.initCasesOftShip(valueCase, vertical);
 
 				// tant que c vrai je regarde lautre
-				int cpt = 0;
-				while (gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt)) == true
+				int cpt = 1;
+				while (gridBool.get(bateauCourant.getArrayOfButtonNumber().get(cpt-1)) == true
 						&& cpt < bateauCourant.sizeBateau) {
 
 					cpt++;
@@ -66,6 +71,9 @@ public class AI {
 
 				if (cpt == bateauCourant.sizeBateau) {
 					goodCheckUp = true;
+				} else {
+					goodCheckUp = false;
+					bateauCourant.getArrayOfButtonNumber().clear();
 				}
 
 			} while (goodCheckUp == false);
@@ -78,17 +86,17 @@ public class AI {
 
 	}
 
-	public StatutBateau getStatut(int valueCase) {
-		StatutBateau statutBateau = StatutBateau.RATE;
+	public StatutBateauAI getStatut(int valueCase) {
+		StatutBateauAI statutBateau = StatutBateauAI.RATE;
 
 		for (int i = 0; i < this.arrayBateauAI.size(); i++) {
 			for (int j = 0; j < this.arrayBateauAI.get(i).getArrayOfButtonNumber().size(); j++)
 
 				if (valueCase == this.arrayBateauAI.get(i).getArrayOfButtonNumber().get(j)) {
-					statutBateau = StatutBateau.TOUCHE;
+					statutBateau = StatutBateauAI.TOUCHE;
 					this.arrayBateauAI.get(i).getArrayOfButtonNumber().remove(j);
 					if (this.arrayBateauAI.get(i).getArrayOfButtonNumber().isEmpty()) {
-						statutBateau = StatutBateau.COULE;
+						statutBateau = StatutBateauAI.COULE;
 					}
 				}
 		}

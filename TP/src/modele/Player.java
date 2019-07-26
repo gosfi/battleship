@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Player {
-	public enum StatutBateau {
+	public enum StatutBateauPlayer {
 		TOUCHE, COULE, RATE
 	}
 
@@ -25,11 +25,12 @@ public class Player {
 		arrayBateauPlayer.add(patrouille);
 		
 		initPlacementOfShip();
+
 	}
 
 	public void initPlacementOfShip() {
-		int ligne;
-		int colonne;
+		int x;
+		int y;
 		int valueCase;
 		boolean goodCheckUp = false;
 		ArrayList<Boolean> gridBool = new ArrayList<>();
@@ -43,20 +44,20 @@ public class Player {
 			Bateaux bateauCourant = this.arrayBateauPlayer.get(i);
 
 			do {
-
+				//boolean goodCheckUp = false;
 				boolean vertical = new Random().nextBoolean();
-
-				if (vertical) {
-					ligne = new Random().nextInt(11 - bateauCourant.sizeBateau) + 1;
-					colonne = new Random().nextInt(10) + 1;
+				
+				if (vertical==true) {
+					x = new Random().nextInt(10 - bateauCourant.sizeBateau)  ;
+					y = new Random().nextInt(10) ;
 				}
 
 				else {
-					ligne = new Random().nextInt(10) + 1;
-					colonne = new Random().nextInt(11 - bateauCourant.sizeBateau) + 1;
+					x = new Random().nextInt(10) ;
+					y = new Random().nextInt(10 - bateauCourant.sizeBateau)  ;
 				}
 
-				valueCase = (ligne - 1) * 10 + colonne;
+				valueCase = (x * 10) + y;
 
 				bateauCourant.initCasesOftShip(valueCase, vertical);
 
@@ -70,6 +71,9 @@ public class Player {
 
 				if (cpt == bateauCourant.sizeBateau) {
 					goodCheckUp = true;
+				}else {
+					goodCheckUp = false;
+					bateauCourant.getArrayOfButtonNumber().clear();
 				}
 
 			} while (goodCheckUp == false);
@@ -82,17 +86,17 @@ public class Player {
 
 	}
 
-	public StatutBateau getStatut(int valueCase) {
-		StatutBateau statutBateau=StatutBateau.RATE;
+	public StatutBateauPlayer getStatut(int valueCase) {
+		StatutBateauPlayer statutBateau=StatutBateauPlayer.RATE;
 
 		for (int i = 0; i < this.arrayBateauPlayer.size(); i++) {	
 			for (int j = 0; j < this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().size(); j++)
 
 				if (valueCase == this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().get(j)) {
-					statutBateau = StatutBateau.TOUCHE;
+					statutBateau = StatutBateauPlayer.TOUCHE;
 					this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().remove(j);
 					if(this.arrayBateauPlayer.get(i).getArrayOfButtonNumber().isEmpty()) {
-						statutBateau = StatutBateau.COULE;
+						statutBateau = StatutBateauPlayer.COULE;
 					}
 				} 
 		}

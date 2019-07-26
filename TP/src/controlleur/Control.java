@@ -2,7 +2,8 @@ package controlleur;
 
 import vue.*;
 import modele.*;
-import modele.Player.StatutBateau;
+import modele.AI.StatutBateauAI;
+import modele.Player.StatutBateauPlayer;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,7 +25,7 @@ public class Control {
 	public void setMenu(Menu menu) {
 		this.leMenu = menu;
 	}
-
+	
 	public void setPlateau(PlateauJeu lePlateauJeu) {
 		this.lePlateauJeu = lePlateauJeu;
 	}
@@ -37,11 +38,11 @@ public class Control {
 		return this.leModele.getArrayBateau();
 	}
 
-	public StatutBateau statutEnemy(int casePerformed) {
+	/*public StatutBateau statutEnemy(int casePerformed) {
 		return this.ai.getStatut(casePerformed);
 	}
-
-	public StatutBateau statutPlayer(int casePerformed) {
+*/
+	public StatutBateauPlayer statutPlayer(int casePerformed) {
 		return this.leModele.getStatut(casePerformed);
 	}
 
@@ -53,48 +54,44 @@ public class Control {
 
 	public boolean setTour() {
 		tourAI = true;
-        return tourAI;
+		return tourAI;
 
 	}
-
 	public void lancerPartieOffline() {
-        ai = new AI();
-       // ai.initPlacementOfShip();
+		this.ai = new AI();
+				
 		boolean gameOver = false;
 
 		int cptPlayer = 0, cptAi = 0;
 
 		while (gameOver) {
 
-
 			if (Control.tourAI == false) {
 
+				if (tourAI == false) {
 
+					StatutBateauAI statutAi = ai.getStatut(casePeformed);
+					tourAI = true;
 
-			if (tourAI == false) {
-
-				StatutBateau statutAi = ai.getStatut(casePeformed);
-				tourAI = true;
-
-				if (statutAi == StatutBateau.TOUCHE || statutAi == StatutBateau.COULE) {
-					cptPlayer++;
+					if (statutAi == StatutBateauAI.TOUCHE || statutAi == StatutBateauAI.COULE) {
+						cptPlayer++;
+					}
+				} else if (tourAI == true) {
+					int caseAi = new Random().nextInt(100);
+					StatutBateauPlayer statutPlayer = this.leModele.getStatut(caseAi);
+					if (statutPlayer == StatutBateauPlayer.TOUCHE || statutPlayer == StatutBateauPlayer.COULE) {
+						cptAi++;
+						this.lePlateauJeu.setIndice(caseAi);
+					} else {
+						this.lePlateauJeu.setIndice(caseAi);
+					}
 				}
-			} else if (tourAI == true) {
-				int caseAi = new Random().nextInt(100);
-				StatutBateau statutPlayer = this.leModele.getStatut(caseAi);
-				if (statutPlayer == StatutBateau.TOUCHE || statutPlayer == StatutBateau.COULE) {
-					cptAi++;
-					this.lePlateauJeu.setIndice(caseAi);
-				} else {
-					this.lePlateauJeu.setIndice(caseAi);
+				if (cptPlayer == 12 || cptAi == 12) {
+					gameOver = true;
 				}
 			}
-			if (cptPlayer == 12 || cptAi == 12) {
-				gameOver = true;
-			}
+
 		}
 
 	}
-
-	}
-	}
+}

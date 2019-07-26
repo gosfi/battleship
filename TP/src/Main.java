@@ -1,6 +1,7 @@
 
 import vue.*;
 import controlleur.*;
+import modele.AI;
 import modele.Player;
 
 public class Main {
