@@ -65,8 +65,12 @@ public class Control {
 		while (gameOver) {
 
 
+			if (Control.tourAI == false) {
+
+
 
 			if (tourAI == false) {
+
 				StatutBateau statutAi = ai.getStatut(casePeformed);
 				tourAI = true;
 
@@ -90,4 +94,5 @@ public class Control {
 
 	}
 
-}
+	}
+	}
