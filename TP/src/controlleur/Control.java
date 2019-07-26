@@ -25,9 +25,7 @@ public class Control {
 		this.leMenu = menu;
 	}
 
-	public void setPlateau(PlateauJeu lePlateauJeu) {
-		this.lePlateauJeu = lePlateauJeu;
-	}
+
 
 	public void setModele(Player leModele) {
 		this.leModele = leModele;
