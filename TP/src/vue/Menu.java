@@ -48,10 +48,11 @@ public class Menu extends FrameWindow implements ActionListener {
 			this.dispose();
 			Rulez rules = new Rulez("rules", 600, 600);
 
-		} else {
+		} else if (btn.getText() == "Vs another player") {
 			this.dispose();
 			PlateauJeu plat = new PlateauJeu("Jouseur 1", 1000, 800,cont);
-
+			plat.initPlacementShip(cont.passArrayToview());
+			cont.lancerPartieOffline();
 		}
 
 	}

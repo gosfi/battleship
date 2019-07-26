@@ -94,7 +94,7 @@ public class PlateauJeu extends FrameWindow {
 class EcouteurBoutons implements ActionListener {
 	Control leControleur;
 
-	PlateauJeu lePlateau;
+
 
 	public EcouteurBoutons(Control control) {
 		this.leControleur = control;
@@ -106,9 +106,9 @@ class EcouteurBoutons implements ActionListener {
 		JButton boutons = (JButton) actionEvent.getSource();
 		int indice = Integer.parseInt(boutons.getText());
 		leControleur.setCase(indice);
-		leControleur.setTour(true);
+		leControleur.setTour();
 
-		this.lePlateau.btnArrayPlayer.get(lePlateau.indice).setBackground(Color.GREEN);
+		//this.lePlateau.btnArrayPlayer.get(lePlateau.indice).setBackground(Color.GREEN);
 
 		Shoot shoot = new Shoot();
 

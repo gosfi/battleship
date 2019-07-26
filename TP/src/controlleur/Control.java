@@ -51,17 +51,20 @@ public class Control {
 
 	}
 
-	public void setTour(boolean tour) {
-		this.tourAI = tour;
+	public void setTour() {
+		tourAI = true;
 	}
 
 	public void lancerPartieOffline() {
+        ai = new AI();
+        ai.initPlacementOfShip();
 		boolean gameOver = false;
+
 		int cptPlayer = 0, cptAi = 0;
 
-		while (gameOver = false) {
+		while (gameOver) {
 
-			ai = new AI();
+
 
 			if (Control.tourAI == false) {
 				StatutBateau statutAi = ai.getStatut(casePeformed);
