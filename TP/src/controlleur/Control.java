@@ -25,7 +25,7 @@ public class Control {
 	public void setMenu(Menu menu) {
 		this.leMenu = menu;
 	}
-	
+
 	public void setPlateau(PlateauJeu lePlateauJeu) {
 		this.lePlateauJeu = lePlateauJeu;
 	}
@@ -38,10 +38,10 @@ public class Control {
 		return this.leModele.getArrayBateau();
 	}
 
-	/*public StatutBateau statutEnemy(int casePerformed) {
+	public StatutBateauAI statutEnemy(int casePerformed) {
 		return this.ai.getStatut(casePerformed);
 	}
-*/
+
 	public StatutBateauPlayer statutPlayer(int casePerformed) {
 		return this.leModele.getStatut(casePerformed);
 	}
