@@ -16,6 +16,7 @@ public class Control {
 	PlateauJeu lePlateauJeu;
 	Player leModele;
 	AI ai;
+	Shoot shotAi;
 	int casePeformed = -1;
 
 	public void bateauStatut() {
@@ -52,46 +53,13 @@ public class Control {
 
 	}
 
-	public boolean setTour() {
+	public void setTourAI() {
 		tourAI = true;
-		return tourAI;
+
 
 	}
 	public void lancerPartieOffline() {
 		this.ai = new AI();
-				
-		boolean gameOver = false;
-
-		int cptPlayer = 0, cptAi = 0;
-
-		while (gameOver) {
-
-			if (Control.tourAI == false) {
-
-				if (tourAI == false) {
-
-					StatutBateauAI statutAi = ai.getStatut(casePeformed);
-					tourAI = true;
-
-					if (statutAi == StatutBateauAI.TOUCHE || statutAi == StatutBateauAI.COULE) {
-						cptPlayer++;
-					}
-				} else if (tourAI == true) {
-					int caseAi = new Random().nextInt(100);
-					StatutBateauPlayer statutPlayer = this.leModele.getStatut(caseAi);
-					if (statutPlayer == StatutBateauPlayer.TOUCHE || statutPlayer == StatutBateauPlayer.COULE) {
-						cptAi++;
-						this.lePlateauJeu.setIndice(caseAi);
-					} else {
-						this.lePlateauJeu.setIndice(caseAi);
-					}
-				}
-				if (cptPlayer == 12 || cptAi == 12) {
-					gameOver = true;
-				}
-			}
-
-		}
-
+		ai.initPlacementOfShip();
 	}
 }
